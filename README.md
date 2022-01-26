@@ -1,2 +1,3 @@
 # PersonalCPlusPlus
- Personal cplusplus project in order to improve
+ Personal cplusplus project in order to improve my skills
+ 
