@@ -36,7 +36,7 @@ void Function() {}
 #pragma endregion
 #pragma region STATIC_INSIDE_CLASS_EXAMPLE
 
-struct Entity
+struct Entity_StaticClassExample
 {
 	static int x, y;
 	static void Print()
@@ -46,8 +46,8 @@ struct Entity
 };
 
 //Required to compile since they only have one static instance shared across all Entity instances of the class 
-int Entity::x;
-int Entity::y;
+//int Entity::x;
+//int Entity::y;
 
 //Example in Main -> Same values
 // Entity e;
@@ -60,14 +60,48 @@ int Entity::y;
 //Entity::Print();
 
 #pragma endregion
+#pragma region VIRTUAL_FUNCTIONS_EXAMPLE
+
+class Entity_ExamplePureVirtual
+{
+public:
+	virtual std::string GetName() { return "Entity"; }
+};
+
+class Player_ExamplePureVirtual : public Entity_ExamplePureVirtual
+{
+private: 
+	std::string m_Name;
+public:
+	Player_ExamplePureVirtual(const std::string& name)
+		: m_Name(name) {}
+	std::string GetName() override { return m_Name; }
+};
+
+void PrintName_ExamplePureVirtual(Entity_ExamplePureVirtual* entity)
+{
+	std::cout << entity->GetName() << std::endl;
+}
+
+//In Main
+//Entity* e = new Entity();
+//PrintName(e);
+//Player* p = new Player("Player");
+//PrintName(p);
+//Result without virtual ////////// Result with wirtual method
+	//Entity						//Entity
+	//Entity						//Player
+#pragma endregion
 
 int main()
 {
-	Log log; 
-	log.SetLevel(Log::LEVELERROR);
-	log.Warn("Hello!");
-	log.Error("Hello!");
-	log.Info("Hello!");
+	//Log log; 
+	//log.SetLevel(Log::LEVELERROR);
+	//log.Warn("Hello!");
+	//log.Error("Hello!");
+	//log.Info("Hello!");
+
+
 
 	std::cin.get();
 	return 0;
