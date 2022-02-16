@@ -93,6 +93,22 @@ void PrintName_ExamplePureVirtual(Entity_ExamplePureVirtual* entity)
 	//Entity						//Player
 #pragma endregion
 
+#pragma region ARRAY_EXAMPLE
+
+//int example[5];
+//int* ptr = example; //Points first Element
+//*(ptr + 1);			//Points element 1
+//&(*(ptr + 1));		//Memory address of element 1
+
+////Create arrays in the heap
+//int* another = new int[5];
+//// MUST BE DELETED WITH delete[]
+//delete[] another;
+////Number of elements of Array
+//int count = sizeof(example) / sizeof(int); //Count of elements
+
+#pragma endregion
+
 int main()
 {
 	//Log log; 
@@ -100,8 +116,6 @@ int main()
 	//log.Warn("Hello!");
 	//log.Error("Hello!");
 	//log.Info("Hello!");
-
-
 
 	std::cin.get();
 	return 0;
